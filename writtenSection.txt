@@ -2,27 +2,58 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+HTML semantics is the concept of applying descriptive words to HTML structure/tags. For example when <strong></strong> is used it applies bold to the content within the strong tags. That is conceptually easy for a person to understand than the old way of doing it, <b>. 
+
+Other examples are header, footer, nav, section, and aside. Semantic HTML has improved over it’s life with each major revision. This has made it easier for users, not just browsers, to understand what an attribute means and can do. 
+
 2. What is the box model?
+
+The box model is the idea that every element in web development/on a web page is a rectangular box. In essence, every webpage is built out of a collection of boxes modified using properties like, width, height, padding and margin. 
+
 
 3. What is the difference between IDs and Classes?
 
+IDs are unique to a page and are used on one element, such as a form input. 
+Classes can be applied to many elements, such as navbar items.
+
 4. What does the z-index do?
+
+In CSS the z-index is used to adjust what order elements are layered on each other when they overlap. The default z-value is zero and when multiple elements overlap the order is based on the order in the DOM. You can manually adjust elements positions when overlapping by manipulating the z-index value. 
 
 5. Summarize what the keyword 'this' is used for?
 
+The keyword ‘this’ is created under the hood, when a function is created, and links to the object in which the function operates. Said another way, most of the time, this is used inside functions to refer to the object  the function is contained within. However, the use of ‘this’ is affected when used with, strict, scope, methods,  and constructors. 
+
 6. What is a callback?
 
+A callback is a function that is passed to another function as an argument, and the callback function is executed/called inside the function it was passed to. Essentially, a callback function is telling some other function to do work and respond back with the result when complete.
+
 7. What is a closure?
+Closures are used when you want to create a function that returns another function, that does something with the arguments passed in. They return a function which ‘remembers’  the arguments you passed in.
 
 8. How does prototype work?
 
+Prototypes work in two ways. One: by allowing access to an object's properties(objectsName.propertyTarget)
+Two: allowing objects to inherit properties through prototype based inheritance.
+
 9. What is MVC?
+
+MVC stands for model view controller and is an framework/architecture used to provide better organize code.
+Model - holds the data and performs CRUD operations
+View - is what the user sees
+Controller - passes data and requests from the user back and forth. 
 
 10. What is the component lifecycle?
 
+Reacts components go through a lifecycle. The cycle is, initial render, state change, props change, and unmount. Each method of that cycle has a specific mission and tasks to complete that mission. Ps Steven…. I'm getting tired. Can you tell?  
+
 11. What is REST?
 
+REST is a guideline for building APIs and sharing information between computers and the internet. REST is build on the foundation that only four functions are ever really needed when sharing data. Get, Post, Put, and Delete.
+
 12. Name three ways of getting data from the URL using express
+
+Routing, params, and middleware
 
 create table users (
 id serial,
@@ -33,9 +64,18 @@ email varchar(255)
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
+SELECT * FROM users;
 
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
 
+INSERT INTO users
+VALUES ('your name', 'fake@fake.com');
+
 -Update the newly created user's name to 'Bobby Boy':
+UPDATE users
+SET name = 'Bobby Boy'
+WHERE name = 'your name';
 
 -Delete the newly updated user:
+DELETE FROM user
+WHERE name = 'Bobby Boy';
